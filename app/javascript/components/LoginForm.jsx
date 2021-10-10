@@ -12,6 +12,9 @@ const useStyles = makeStyles(() =>
     formContainer: {
       maxWidth: "50%"
     },
+    button: {
+      height: "100px",
+    }
   })
 )
 
@@ -51,7 +54,7 @@ export function LoginForm() {
           <Input/>
           <FormLabel>Email</FormLabel>
           <Input/>
-          <Button onClick={() => handleSubmit()}/>
+          <Button className={classes.button} onClick={() => handleSubmit()}/>
         </FormGroup>
       </Box>
     </>

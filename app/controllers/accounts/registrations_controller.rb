@@ -11,6 +11,7 @@ class Accounts::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    puts "################################"
     byebug
     super
   end
