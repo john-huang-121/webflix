@@ -26,6 +26,7 @@ const useStyles = makeStyles(() =>
 
 
 export function LoginForm() {
+  const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
 
   function handleSubmit() {
     axios({
@@ -34,7 +35,11 @@ export function LoginForm() {
       data: {
         email: 'test@email.com',
         password: 'S3cur3!'
-      }
+      },
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': csrf
+      },
     });
   }
   const classes = useStyles();
