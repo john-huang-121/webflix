@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import {LoginForm} from "../components/LoginForm"
 
 export default () => (
   <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">
@@ -9,7 +10,7 @@ export default () => (
         <p className="lead">
           Webflix Root Page
         </p>
-        <hr className="my-4" />
+        {/* <LoginForm/> */}
       </div>
     </div>
   </div>
