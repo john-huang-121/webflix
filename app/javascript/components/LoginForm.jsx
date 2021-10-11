@@ -36,8 +36,11 @@ export function LoginForm() {
       method: 'post',
       url: '/accounts',
       data: {
-        email: 'test@email.com',
-        password: 'S3cur3!'
+        account: {
+          email: 'abcdetest@email.com',
+          password: 'S3cur3asfhkjl!',
+          password_confirmation: "S3cur3asfhkjl!"
+        },
       },
       headers: {
         'Content-Type': 'application/json',
