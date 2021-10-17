@@ -13,6 +13,14 @@
   </head>
 
   <body>
+    <nav style="text-align: right">
+      <% if account_signed_in? %>
+        <%= link_to('Logout', destroy_account_session_path, method: :delete) %>          
+      <% else %>
+        <%= link_to('Login', new_account_session_path)  %> |
+        <%= link_to('Sign Up', new_account_registration_path)  %>  
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
