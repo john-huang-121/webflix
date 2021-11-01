@@ -10,14 +10,14 @@ class Accounts::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    account = Account.new(params[:registration])
-    if account.save!
-      render json: {status: "GREAT"}
-    else
-      render json: {status: "TERRIBLE"}
-    end
-  end
+  # def create
+  #   account = Account.new(params[:registration])
+  #   if account.save!
+  #     render json: {status: "GREAT"}
+  #   else
+  #     render json: {status: "TERRIBLE"}
+  #   end
+  # end
 
   # DELETE /resource/sign_out
   # def destroy
