@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_10_31_055958) do
     t.integer "production"
     t.string "website"
     t.string "trailer"
+    t.string "imdb_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

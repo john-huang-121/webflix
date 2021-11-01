@@ -13,12 +13,18 @@ require 'csv'
           puts "Mapping and saving to db..."
           csv.each do |row|
             transformed_cols = Transformer.map_columns(row)
-            movie = Movie.create(transformed_cols) 
-            unless movie.save!
-              puts "Failed because #{row[0]}"
-            end
+            update_or_create_movie(transformed_cols)
           end
           puts "Done."
+        end
+
+        def self.update_or_create_movie(transformed_cols)
+          movie = Movie.find_by(imdb_id: transformed_cols[:imdb_id])
+          if movie.present?
+            puts "Failed to update #{row[0]}" unless movie.update!(transformed_cols)
+          else
+            puts "Failed to save #{row[0]}" unless Movie.create!(transformed_cols)
+          end
         end
       end
     end

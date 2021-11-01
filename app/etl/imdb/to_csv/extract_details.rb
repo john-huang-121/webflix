@@ -19,7 +19,7 @@ require 'csv'
             imdb_id = row[2]
             response = fetch_details_by_imdb_id(imdb_id) 
             if !response["Error"]
-              transformed_cols = TransformDetails.map_columns(response)
+              transformed_cols = TransformDetails.map_columns(response, imdb_id)
               csv_cols << transformed_cols
               
             else

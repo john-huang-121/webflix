@@ -21,6 +21,8 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.integer :production
       t.string :website
       t.string :trailer
+      t.string :imdb_id, null: false
+
 
       t.timestamps
     end

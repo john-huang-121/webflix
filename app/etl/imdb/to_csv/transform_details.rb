@@ -3,7 +3,7 @@
 module Imdb
   module ToCsv
     class TransformDetails
-      def self.map_columns(response)
+      def self.map_columns(response, imdb_id)
         json_response = JSON.parse(response)
         if json_response["Response"] == "True"
           json_search = json_response.symbolize_keys
@@ -28,6 +28,7 @@ module Imdb
             json_search[:BoxOffice],
             json_search[:Production],
             json_search[:Website],
+            imdb_id
           ]
         else
           json_response

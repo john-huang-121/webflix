@@ -24,6 +24,7 @@ module Imdb
           boxOffice: map_dollars(row[17]),
           production: map_dollars(row[18]),
           website: map_website(row[19]),
+          imdb_id: row[20],
         }
       end
 

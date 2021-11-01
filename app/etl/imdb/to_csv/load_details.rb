@@ -33,6 +33,7 @@ module Imdb
           'boxOffice',
           'production',
           'website',
+          'imdbID'
         ]
       end
     end
